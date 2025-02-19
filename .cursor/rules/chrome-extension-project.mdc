@@ -1,0 +1,24 @@
+---
+description: Chrome Extension Project - General Rules
+globs: **
+---
+
+## Project Rules for Chrome Extension Development with Cursor AI
+
+---
+
+*   **Technology Stack:** Use Vanilla JavaScript, HTML, and CSS for all development. Do not use any front-end frameworks like React, Vue, or Angular unless explicitly instructed otherwise. This project aims for simplicity and ease of understanding for a beginner.
+
+*   **Code Style:** Prioritize clean, readable, and well-commented code. Follow standard JavaScript, HTML, and CSS coding conventions.  Code should be easy to understand and maintain, even for someone new to programming.
+
+*   **Comments:** Add detailed English comments to all JavaScript code, explaining the functionality and logic, especially for complex sections. Comments should be geared towards a beginner programmer, ensuring clarity and easy comprehension.
+
+*   **Chrome Extension Best Practices:** Adhere to Chrome Extension development best practices. Use Manifest V3.  Prefer Service Workers over Background Pages. When using Content Scripts, strictly follow the principle of least privilege and request minimal permissions. Refer to the official Chrome Extension documentation for API usage and security guidelines.
+
+*   **Problem Solving:** When encountering issues or bugs, first thoroughly read the relevant code files to understand the existing functionality.  Analyze the root cause of the problem. When suggesting solutions, explain the reasoning clearly and offer a few different options if applicable, outlining the pros and cons of each.
+
+*   **Development Focus:** In the initial stages, prioritize implementing core functionality over premature optimization. Aim for functional and understandable code first. Basic error handling (e.g., using `console.error()` or `alert()`) is sufficient for the initial version.  Responsiveness for different screen sizes is a secondary concern for the initial popup UI.
+
+*   **Project Structure:** The project directory structure is as follows: `manifest.json` for extension metadata, `popup.html` for the popup UI, `popup.js` for popup JavaScript logic, `popup.css` for popup styling, and `images/` folder for icons.  Cursor AI should be aware of this structure when generating or modifying files.
+
+*   **Proactive Assistance:** Cursor AI is expected to be proactive in assisting with development. It should offer suggestions, guide the user through the development process, and anticipate potential issues, rather than passively waiting for explicit instructions at every step.
