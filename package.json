@@ -1,0 +1,28 @@
+{
+  "name": "llm-conversation-copier",
+  "version": "1.0.0",
+  "description": "Chrome extension for copying LLM conversations with formatting",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage"
+  },
+  "keywords": [
+    "chrome-extension",
+    "llm",
+    "chatgpt",
+    "claude",
+    "gemini"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/core": "^7.22.0",
+    "@babel/preset-env": "^7.22.0",
+    "jest": "^29.5.0",
+    "jest-environment-jsdom": "^29.5.0",
+    "jsdom": "^22.1.0",
+    "jsdom-global": "^3.0.2"
+  }
+} 

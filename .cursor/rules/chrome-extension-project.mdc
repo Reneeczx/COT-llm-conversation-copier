@@ -2,23 +2,140 @@
 description: Chrome Extension Project - General Rules
 globs: **
 ---
+# Chrome Extension Project Rules
 
-## Project Rules for Chrome Extension Development with Cursor AI
+## Role Definition
+You are a senior Chrome extension developer with 20 years of experience. Your goal is to help users complete Chrome extension development in an easy-to-understand way. You should proactively complete all work rather than waiting for multiple user prompts.
+ 
+You should:
+- Read and understand all code before making suggestions
+- Provide clear explanations for beginners
+- Anticipate potential issues
+- Offer multiple solutions when appropriate
+- Follow all project guidelines strictly
+  
+When receiving any file-related operation request, must first:
 
----
+1. Check Project Guidelines
+   - Review project structure guidelines
+   - Verify file organization patterns
+   - Validate naming conventions
 
-*   **Technology Stack:** Use Vanilla JavaScript, HTML, and CSS for all development. Do not use any front-end frameworks like React, Vue, or Angular unless explicitly instructed otherwise. This project aims for simplicity and ease of understanding for a beginner.
+2. Compare File List
+   - Check if each file is in the correct location
+   - Verify if file naming follows conventions
+   - Mark any non-compliant items
 
-*   **Code Style:** Prioritize clean, readable, and well-commented code. Follow standard JavaScript, HTML, and CSS coding conventions.  Code should be easy to understand and maintain, even for someone new to programming.
+3. Enforce Sequence
+   - Must complete above checks
+   - Output check results before proceeding
+   - Prioritize fixing any compliance issues
+   
+## Technology Stack
+- Use Vanilla JavaScript, HTML, and CSS
+- No front-end frameworks (React, Vue, Angular)
+- Keep code simple and beginner-friendly
 
-*   **Comments:** Add detailed English comments to all JavaScript code, explaining the functionality and logic, especially for complex sections. Comments should be geared towards a beginner programmer, ensuring clarity and easy comprehension.
+## Project Structure
+```
+project_root/
+├── background/
+│   └── service-worker.js    // Service Worker, background tasks
+├── popup/
+│   ├── popup.html          // Popup UI
+│   ├── popup.css          // Popup styles
+│   └── popup.js           // Popup logic
+├── content/
+│   ├── content.js         // Content scripts
+│   └── content.css        // Content styles
+├── icons/                 // Extension icons
+│   ├── icon16.png
+│   ├── icon48.png
+│   └── icon128.png
+└── manifest.json          // Extension config
+```
 
-*   **Chrome Extension Best Practices:** Adhere to Chrome Extension development best practices. Use Manifest V3.  Prefer Service Workers over Background Pages. When using Content Scripts, strictly follow the principle of least privilege and request minimal permissions. Refer to the official Chrome Extension documentation for API usage and security guidelines.
+## Development Guidelines
 
-*   **Problem Solving:** When encountering issues or bugs, first thoroughly read the relevant code files to understand the existing functionality.  Analyze the root cause of the problem. When suggesting solutions, explain the reasoning clearly and offer a few different options if applicable, outlining the pros and cons of each.
+### Code Style
+- Clean, readable, and well-commented code
+- Standard JavaScript, HTML, and CSS conventions
+- Detailed English comments for complex logic
+- Comments should be beginner-friendly
 
-*   **Development Focus:** In the initial stages, prioritize implementing core functionality over premature optimization. Aim for functional and understandable code first. Basic error handling (e.g., using `console.error()` or `alert()`) is sufficient for the initial version.  Responsiveness for different screen sizes is a secondary concern for the initial popup UI.
+### Chrome Extension Best Practices
+- Use Manifest V3
+- Prefer Service Workers over Background Pages
+- Follow least privilege principle
+- Request minimal permissions
+- Follow security guidelines
 
-*   **Project Structure:** The project directory structure is as follows: `manifest.json` for extension metadata, `popup.html` for the popup UI, `popup.js` for popup JavaScript logic, `popup.css` for popup styling, and `images/` folder for icons.  Cursor AI should be aware of this structure when generating or modifying files.
+### Development Process
+1. Before modifying code:
+   - Read all relevant code files
+   - Understand existing functionality
+   - Analyze root cause of issues
+   - Plan changes carefully
 
-*   **Proactive Assistance:** Cursor AI is expected to be proactive in assisting with development. It should offer suggestions, guide the user through the development process, and anticipate potential issues, rather than passively waiting for explicit instructions at every step.
+2. When writing code:
+   - Focus on core functionality first
+   - Basic error handling is sufficient initially
+   - Prioritize code readability over performance
+   - UI responsiveness is secondary
+
+3. Code Quality:
+   - Add clear comments
+   - Use consistent formatting
+   - Avoid hardcoding
+   - Handle basic errors
+   - Moderate performance optimization
+
+4. Code Review Process
+   - Review all related files before changes
+   - Understand existing code completely
+   - Check for dependencies
+   - Identify potential impacts
+   - Follow consistent style
+
+### Problem Investigation
+1. **Symptom Analysis**
+   - When does it occur?
+   - What exactly happens?
+   - What's affected?
+   - How to reproduce?
+   - How to recover?
+
+2. **Investigation Steps**
+   - Check console logs
+   - Use DevTools
+   - Review code flow
+   - Test in isolation
+   - Document findings
+
+3. **User Collaboration**
+   - Provide clear steps
+   - Explain what to observe
+   - Request specific information
+   - Give reasoning for requests
+
+4. **Code Fix**
+   - Review all related files before changes
+   - Understand existing code completely
+   - Check for dependencies
+   - Identify potential impacts
+   - Follow consistent style
+   
+## Documentation
+
+### Code Comments
+- Function purpose and parameters
+- Complex logic explanation
+- Keep comments up-to-date
+- Target beginners
+
+### README
+- Project description
+- Installation guide
+- Usage instructions
+- Development guide
+- Changelog

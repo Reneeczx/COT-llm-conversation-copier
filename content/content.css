@@ -1,0 +1,127 @@
+/* 可选择的对话单元 */
+.llm-copier-selection-mode .llm-copier-selectable {
+  position: relative !important;
+  cursor: pointer !important;
+  pointer-events: auto !important; /* 确保可点击 */
+  user-select: none !important; /* 防止选中文本而不是切换状态 */
+  -webkit-user-select: none !important;
+  /* 盒模型重置 */
+  box-sizing: content-box ;
+  width: auto ;
+  max-width: none ;
+  min-width: 0 ;
+  min-height: initial ;
+  max-height: none ;
+  height: auto ;
+  padding: inherit ;
+  margin: inherit ;
+}
+
+/* 让页面内容区域元素不干扰点击，但保留基本交互 - 修改排除思考过程元素 */
+.llm-copier-selection-mode .llm-copier-selectable > *:not(.checkbox-indicator):not(mat-accordion):not(mat-expansion-panel) {
+  pointer-events: none !important; /* 子元素禁用点击，但不影响父元素、复选框和思考过程元素 */
+}
+
+/* 思考过程元素保持可点击 */
+.llm-copier-selection-mode mat-accordion,
+.llm-copier-selection-mode mat-expansion-panel,
+.llm-copier-selection-mode .thinking-steps,
+.llm-copier-selection-mode .intermediate-steps,
+.llm-copier-selection-mode .reasoning-steps {
+  pointer-events: auto !important;
+  cursor: pointer !important;
+}
+
+/* 悬停效果 */
+.llm-copier-selection-mode .llm-copier-selectable:hover {
+  background-color: rgba(0, 120, 255, 0.1);
+}
+
+
+
+/* 高亮边框效果 */
+.llm-copier-selection-mode .llm-copier-selectable::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  border: 2px solid transparent;
+  transition: border-color 0.2s;
+}
+
+.llm-copier-selection-mode .llm-copier-selectable:hover::before {
+  border-color: rgba(0, 120, 255, 0.5);
+} 
+/* 复选框样式 */
+.llm-copier-selection-mode .llm-copier-selectable .checkbox-indicator {
+  content: '';
+  position: absolute;
+  left: -24px;  /* 使用负margin避免影响原内容 */
+  top: 50%;
+  transform: translateY(-50%);
+  width: 16px;
+  height: 16px;
+  border: 2px solid #0078ff;
+  border-radius: 3px;
+  background-color: white;
+  pointer-events: auto !important; /* 确保可点击 */
+}
+
+/* 思考过程处理 - 优化选择器 */
+.llm-copier-selection-mode {
+  /* 统一思考过程选择器 */
+  --thinking-selectors: '.thinking-steps, .intermediate-steps, .reasoning-steps, mat-accordion.compact-accordion mat-expansion-panel';
+}
+
+/* 使用变量简化选择器 */
+.llm-copier-selection-mode :is(var(--thinking-selectors)) {
+  position: relative;
+}
+
+/* 限制所有选择器在选择模式下 */
+.llm-copier-selection-mode .chat-turn-container.user.llm-copier-selectable,
+.llm-copier-selection-mode .model-prompt-container.llm-copier-selectable {
+  cursor: pointer;
+}
+
+/* Google AI Studio 思考过程面板样式 */
+.llm-copier-selection-mode mat-accordion.compact-accordion mat-expansion-panel.llm-copier-selectable {
+  margin: 8px 0;
+  border-radius: 4px;
+  background-color: rgba(0, 0, 0, 0.02);
+  /* 移除可能影响展开/收起的样式 */
+  transform: none ;
+  transition: none ;
+}
+
+
+/* 选中状态 */
+.llm-copier-selected {
+  background-color: rgba(0, 120, 255, 0.2);
+  position: relative;  /* 使用伪元素添加标记 */
+}
+
+.llm-copier-selected .checkbox-indicator {
+  content: '✓';
+  color: #0078ff;
+  font-weight: bold;
+  text-align: center;
+  line-height: 16px;
+  background-color: rgba(0, 120, 255, 0.1);
+  z-index: 99; /* 确保在最上层 */
+}
+
+/* 使用伪元素添加选中标记 */
+.llm-copier-selected::after {
+  content: ''; 
+  background: #0078ff;
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  pointer-events: none;
+}

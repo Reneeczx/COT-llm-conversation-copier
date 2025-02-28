@@ -5,19 +5,25 @@
   <link rel="stylesheet" href="popup.css">
 </head>
 <body>
-  <div class="container">
-    <h2>LLM对话复制工具</h2>
-    <div class="controls">
-      <button id="startSelect">开始选择</button>
-      <button id="copyMarkdown">复制为Markdown</button>
+  <div id="llm-copier-popup" class="popup">
+    <div class="content">
+      <h1 class="title-inline">LLM对话复制工具</h1>
+      <div class="controls">
+        <button id="startSelect" class="btn">开始选择</button>
+        <button id="copyMarkdown" class="btn">复制为Markdown</button>
+      </div>
+      <div class="options">
+        <label>
+          <input type="checkbox" id="includeThinking" checked>
+          包含思考过程
+        </label>
+      </div>
+      <div id="selectionStatus">
+        <span class="status-icon"></span>
+        <span class="status-text">选择模式：未开始</span>
+      </div>
+      <div id="status" class="status"></div>
     </div>
-    <div class="options">
-      <label>
-        <input type="checkbox" id="includeThinking" checked>
-        包含思考过程
-      </label>
-    </div>
-    <div class="status" id="status"></div>
   </div>
   <script src="popup.js"></script>
 </body>

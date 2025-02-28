@@ -1,53 +1,205 @@
+/* 基础样式重置 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* 侧边栏基本布局 */
 body {
-  width: 300px;
-  padding: 15px;
-  font-family: system-ui, -apple-system, sans-serif;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #333;
+  background-color: #f9f9f9;
+  width: 100%;
+  height: 100vh;
+  overflow: auto;
 }
 
-.container {
+/* 主容器 */
+#llm-copier-popup, .popup {
+  width: 100%;
+  height: 100%;
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  background-color: white;
+  padding: 0;
+  box-sizing: border-box;
+  overflow-y: auto;
 }
 
-.controls {
-  display: flex;
-  gap: 10px;
-}
-
-button {
-  padding: 8px 16px;
-  border: none;
-  border-radius: 4px;
-  background: #2196f3;
-  color: white;
-  cursor: pointer;
-}
-
-button:hover {
-  background: #1976d2;
-}
-
-.options {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
-.status {
-  padding: 8px;
-  border-radius: 4px;
+/* 顶部标题栏 */
+.header {
   display: none;
 }
 
+/* 调整内容区域样式，使其从顶部开始 */
+.content {
+  padding-top: 16px; /* 增加顶部内边距 */
+  padding: 12px;
+  flex: 1;
+  overflow-y: auto;
+}
+
+/* 按钮组 */
+.controls {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.btn {
+  background-color: #4285f4;
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+  flex: 1;
+  transition: background-color 0.2s;
+}
+
+.btn:hover {
+  background-color: #3b78e7;
+}
+
+.btn:active {
+  background-color: #3367d6;
+}
+
+/* 额外的按钮样式 */
+.btn.primary {
+  background-color: #0078ff;
+  border-color: #0078ff;
+  color: white;
+}
+
+.btn.primary:hover {
+  background-color: #0066dd;
+}
+
+.btn.active {
+  background-color: #e65100;
+  border-color: #e65100;
+  color: white;
+}
+
+/* 禁用按钮样式 */
+.btn.disabled {
+  background-color: #cccccc;
+  color: #666666;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.btn.disabled:hover {
+  background-color: #cccccc;
+}
+
+/* 选项区域 */
+.options {
+  margin-bottom: 16px;
+}
+
+.options label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.options input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+}
+
+/* 选择状态指示器 */
+#selectionStatus {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 16px;
+  padding: 12px;
+  background-color: #f0f0f0;
+  border-radius: 4px;
+}
+
+.status-icon {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: #ccc;
+  flex-shrink: 0;
+}
+
+.status-icon.success {
+  background-color: #4caf50;
+}
+
+.status-text {
+  font-size: 14px;
+  color: #555;
+}
+
+/* 可能有的活动状态 */
+.status-icon.active {
+  background-color: #0078ff;
+}
+
+.status-text.active {
+  color: #0078ff;
+  font-weight: 500;
+}
+
+/* 状态消息区域 */
+.status {
+  min-height: 20px;
+  padding: 12px;
+  margin-top: 10px;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
 .status.success {
-  background: #e8f5e9;
+  background-color: #e8f5e9;
   color: #2e7d32;
-  display: block;
 }
 
 .status.error {
-  background: #ffebee;
+  background-color: #ffebee;
   color: #c62828;
-  display: block;
-} 
+}
+
+.status.info {
+  background-color: #e3f2fd;
+  color: #1565c0;
+}
+
+/* 防止外部样式影响 */
+button, input, label {
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: none;
+  outline: none;
+}
+
+/* 移除不使用的选项 */
+.export-options,
+.format-options {
+  display: none;
+}
+
+/* 内联标题样式 */
+.title-inline {
+  font-size: 14px;
+  margin-bottom: 12px;
+  color: #444;
+  font-weight: 500;
+}
+
+
+ 
